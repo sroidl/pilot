@@ -45,6 +45,7 @@ func (m *Menu) MainMenu() {
 			Active:   "{{ .Name | green }}",
 			Inactive: "{{ .Name }}",
 			Label:    "{{ .Name }}",
+			Selected: "{{ .Name | green }}",
 		},
 	}
 
@@ -113,8 +114,8 @@ func (m *Menu) selectDevice(label string, exclusions []*portaudio.DeviceInfo) (*
 		Label: label,
 		Items: devices,
 		Templates: &promptui.SelectTemplates{
-			Label:    "{{ .Name }}?",
-			Selected: "{{ .Name }}",
+			Label:    "{{ .Name }}",
+			Selected: " ",
 			Active:   "{{ .Name | cyan | bold }}",
 			Inactive: "{{ .Name }}",
 		},
@@ -130,7 +131,6 @@ func (m *Menu) selectDevice(label string, exclusions []*portaudio.DeviceInfo) (*
 
 
 func filterDevices(input []*portaudio.DeviceInfo, exclude []*portaudio.DeviceInfo) []*portaudio.DeviceInfo {
-	fmt.Println(exclude)
 	var result []*portaudio.DeviceInfo
 
 	for _, device := range input {
