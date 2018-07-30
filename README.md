@@ -7,10 +7,11 @@ When pair programming in noisy environments I often find myself distracted espec
 With **pilot** and a second soundcard (I use a usb adapter), we can now attach both or headsets into the machine and as if we had those cool helicopter pilot headsets which simply help both pilots to understand each other.
 This is even more effective when using noise cancelling headsets.
 
-## Prerequesites
+## Dependencies
+*Works on my machine™*
 
 * Golang >= 1.10.3 
-* [PortAudio](http://www.portaudio.com/) library.
+* [PortAudio](http://www.portaudio.com/)library (works with v19.6.0).
 
 On MacOs, you can use `brew` to install it:
 
